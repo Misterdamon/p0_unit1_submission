@@ -38,7 +38,7 @@ describe 'sentence_maker' do
   end
 
   it "returns the grammatically correct sentence of the second sentence" do
-    sentence_maker(first_sentence).should eq "Alaska has over 586 thousand miles."
+    sentence_maker(second_sentence).should eq "Alaska has over 586 thousand miles."
   end
 end
 
