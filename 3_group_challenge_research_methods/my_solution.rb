@@ -49,20 +49,33 @@ end
 
 
 # Person 4
-def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
-end
+def my_deletion_method(source, thing_to_delete)
+  
+  if source.is_a? Array #check to see if source is an array
+		source.each do |x| 
+  		source.delete(x) if x.include? thing_to_delete 
+  	end #end each
+  else #if it is not an array, it must be a Hash
+  	source.each do |k,v|
+  		source.delete(k) if k.include? thing_to_delete
+  	end #end each
+  end #end if/else
 
-def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
-end
+end #end method()
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
-
-
+# I worked on the deletion method for this group challenge.
+=begin
+	--The deletion method first checks to see if the input is an array
+		- if it is an array, the code iterates through each element and checks to see if it includes
+				the thing to delete
+		- if the element includes the thing to delete, the element will be deleted from the array
+		-returns modified source array	
+	-- if the source is not an array, in our case it must be a Hash
+		- in the case of a Hash, the code will iterate through all keys/values of the Hash
+		- if the key contains the thing to be deleted, the key/value pair will be deleted from the Hash
+		-returns modified source Hash	
+=end
 ################## DRIVER CODE ###################################
 # HINT: Use `puts` statements to see if you are altering the original structure with these methods. 
 # Each of these should return `true` if they are implemented properly.
